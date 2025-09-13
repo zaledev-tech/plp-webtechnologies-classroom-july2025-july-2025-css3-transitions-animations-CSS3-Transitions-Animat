@@ -1,0 +1,79 @@
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 40px;
+  background: #f4f4f9;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* === Part 1: CSS Transitions & Animations === */
+
+/* Button hover animation */
+.btn {
+  background: #3498db;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background: #2980b9;
+  transform: scale(1.1);
+}
+
+/* Box that JS will animate */
+#box {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  margin: 30px auto;
+  border-radius: 8px;
+  transition: transform 1s;
+}
+
+/* Keyframe animation for spinning box */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+/* === Part 3: Modal with slide/fade animation === */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.6);
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.modal.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  transform: translateY(-50px);
+  transition: transform 0.5s;
+}
+
+.modal:not(.hidden) .modal-content {
+  transform: translateY(0);
+}
